@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhiram Reddy Yanampally - Research Profile</title>
+    <style>
+        /* Base styles */
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --light-bg: #f3f4f6;
+            --dark-bg: #1f2937;
+            --text-color: #111827;
+            --light-text: #f9fafb;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        
+        body {
+            background-color: #f9fafb;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--light-text);
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .profile-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .profile-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            background-color: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .profile-title h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .profile-title h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+        
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .contact-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: opacity 0.2s;
+        }
+        
+        .contact-links a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Main content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            font-size: 1.75rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+        }
+        
+        /* Research highlights */
+        .research-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .research-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .research-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--secondary-color);
+        }
+
+        .research-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #4b5563;
+        }
+        
+        .research-card p {
+            margin-bottom: 1rem;
+        }
+        
+        .paper-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .paper-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Experience and Projects */
+        .timeline-item {
+            position: relative;
+            padding-left: 1.5rem;
+            padding-bottom: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            height: 14px;
+            width: 14px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+        }
+        
+        .timeline-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .timeline-item .timeline-meta {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-bottom: 0.75rem;
+        }
+        
+        .timeline-item ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-item li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Skills section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .skill-category {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+        }
+        
+        .skill-category h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .skill-tag {
+            background-color: var(--light-bg);
+            color: var(--secondary-color);
+            border-radius: 16px;
+            padding: 0.3rem 0.8rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        /* Education */
+        .education-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .education-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .education-card p {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Open Source */
+        .open-source-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .open-source-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .open-source-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--secondary-color);
+        }
+        
+        .open-source-card p {
+            margin-bottom: 1rem;
+        }
+        
+        .open-source-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .open-source-link:hover {
+            text-decoration: underline;
+        }
+        
+        .github-icon {
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        footer p {
+            margin-bottom: 1rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .profile-container {
+                padding: 1rem;
+            }
+            
+            .profile-title h1 {
+                font-size: 2rem;
+            }
+            
+            .profile-title h2 {
+                font-size: 1.25rem;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-image">
+                    <img src="https://i.ibb.co/B5MPB7WV/Whats-App-Image-2024-10-29-at-21-15-53.jpg" alt="Abhiram Reddy Yanampally">
+                </div>
+                <div class="profile-title">
+                    <h1>Abhiram Reddy Yanampally</h1>
+                    <h2>Machine Learning Engineer & Researcher</h2>
+                </div>
+                <div class="contact-links">
+                    <a href="mailto:abhiyanampally@gmail.com">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        abhiyanampally@gmail.com
+                    </a>
+                    <a href="tel:+916281619764">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        +91 6281619764
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=7eFb4pgAAAAJ&hl=en" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                        Google Scholar
+                    </a>
+                    <a href="https://linkedin.com/in/AbhiRam162105" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/abhiyanampally" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <p>I am a Machine Learning Engineer and researcher pursuing a BTech in Information Technology at IIITM Gwalior. My research focuses on deep learning applications in biomedical imaging, natural language processing, and anomaly detection. I am passionate about developing innovative AI solutions that bridge the gap between cutting-edge research and practical implementation. I also actively contribute to open source projects, particularly in the areas of machine learning infrastructure and tooling.</p>
+        </section>
+
+        <section id="publications">
+            <h2 class="section-title">Publications</h2>
+            <div class="research-card">
+                <h3>Deep Learning and Regression Framework for Doppler Angle Estimation with XAI Validation</h3>
+                <h4>Y. A. Reddy, C. Sagar, P. K. Sanki, R. S. Baghel, M. Bhattacharya, B. Jana</h4>
+                <p>Published in IEEE BIBM 2024</p>
+                <p>DOI: 10.1109/BIBM62325.2024.10822074</p>
+                <a href="#" class="paper-link">View Publication</a>
+            </div>
+            <div class="research-card">
+                <h3>High-Resource Translation: Turning Abundance into Accessibility</h3>
+                <h4>Abhiram Reddy Yanampally</h4>
+                <p>arXiv preprint — arXiv:2504.05914 [cs.CL], 2025</p>
+                <a href="#" class="paper-link">View on arXiv</a>
+            </div>
+        </section>
+
+        <section id="research">
+            <h2 class="section-title">Research Projects</h2>
+            <div class="research-card">
+                <h3>Deep Learning Framework for Doppler Angle Estimation from Doppler Ultrasound Images</h3>
+                <p>Developed a low-complexity deep learning framework utilizing advanced Explainable AI (XAI) techniques aimed at enhancing the accuracy of Doppler angle estimation, which is critical for reliable blood flow velocity measurements and effective cardiovascular disease diagnosis.</p>
+                <p>Achieved a remarkable Dice score of 0.96 through thorough evaluation of various image segmentation models, including VGG19 + UNET, ResNet50 + UNET, and MobileNetV3 + UNET.</p>
+                <p>Implemented a robust polynomial regression model for accurate Doppler angle estimation, successfully achieving a mean error of -3.2 degrees, optimized for mobile device deployment.</p>
+                <a href="#" class="paper-link">Project Paper</a>
+            </div>
+            <div class="research-card">
+                <h3>High-Resource Translation: Turning Abundance into Accessibility</h3>
+                <p>Presented a novel approach to constructing an English-to-Telugu translation model using transfer learning techniques, specifically by fine-tuning a pre-trained English-to-Italian translator.</p>
+                <p>Incorporated iterative backtranslation with advanced techniques such as Flash attention for memory efficiency and Byte Pair Encoding with SentencePiece (vocabulary size: 16,000) to generate synthetic parallel data.</p>
+                <a href="#" class="paper-link">Project Paper</a>
+            </div>
+        </section>
+
+        <section id="open-source">
+            <h2 class="section-title">Open Source Contributions</h2>
+            <div class="open-source-card">
+                <h3>GitIngest - Query Ingestion Enhancement</h3>
+                <p>Contributed significant improvements to the GitIngest project by implementing a new feature that enhances the query ingestion process through .gitingest ignore patterns.</p>
+                <p>Designed and implemented a TOML-based configuration system that allows users to define custom file and directory ignore patterns, improving performance and providing better control over repository indexing.</p>
+                <p>Added support for flexible filtering using specific file names, directory paths, and wildcard patterns to customize the ingestion process according to project needs.</p>
+                <a href="https://github.com/cyclotruc/gitingest/pull/191" class="open-source-link" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="github-icon"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    View Pull Request
+                </a>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2 class="section-title">Research Experience</h2>
+            <div class="timeline-item">
+                <h3>Research Intern</h3>
+                <div class="timeline-meta">IIITM Gwalior | April 14, 2024 – December 6, 2024</div>
+                <ul>
+                    <li>Conducted research in deep learning and medical image analysis, resulting in a paper being presented at the IEEE International Conference on Bioinformatics and Biomedicine Workshop— AI-Powered Approaches for Neuro Degenerative Diseases and Autoimmune Disease Related Discovery 2024.</li>
+                    <li>Developed and tested various image segmentation models like VGG19 + UNET, ResNet50 + UNET, and MobileNetV3 + UNET, and created a polynomial regression model for Doppler angle estimation, optimizing for mobile deployment.</li>
+                    <li>Received positive feedback from reviewers, who commended the paper for its innovation and novelty in applying deep learning to Doppler ultrasound image processing.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title">Projects</h2>
+            <div class="research-card">
+                <h3>Replication of Multi-Task Learning Model for Biomedical Imaging</h3>
+                <p>Reproduced the UMedPT model's architecture and training regimen, utilizing ImageNet for initial model pretraining, followed by MedMNIST for fine-tuning. Implemented a multi-task learning framework to concurrently address classification, segmentation, and object detection tasks within the biomedical domain.</p>
+                <a href="#" class="paper-link">Project Details</a>
+            </div>
+            <div class="research-card">
+                <h3>Anomaly Detection Using Autoencoders and Neural Networks</h3>
+                <p>Developed an autoencoder and classifier model in PyTorch for effective anomaly detection in network traffic data, leveraging 78 different network attributes to accurately classify and detect various attack vectors. Addressed class imbalance issues by implementing SMOTE and created a real-time packet sniffing module using Tshark.</p>
+                <a href="#" class="paper-link">Blog Link</a>
+            </div>
+            <div class="research-card">
+                <h3>CricketGPT</h3>
+                <p>Engineered a sophisticated cricket-themed RAG (Retrieval-Augmented Generation) conversational agent using LangChain, FastAPI, Mixtral-22b, and ReactJS. Implemented a self-querying retriever that autonomously fetches relevant data based on user queries, significantly enhancing the chatbot's ability to provide contextually accurate responses.</p>
+                <a href="#" class="paper-link">Blog Link</a>
+            </div>
+            <div class="research-card">
+                <h3>Autoencoder-Based Collaborative Filtering Recommendation System</h3>
+                <p>Developed an autoencoder model in PyTorch to uncover latent user-item patterns from a comprehensive dataset of 20 million ratings. Enhanced recommendation accuracy by 15% through collaborative filtering techniques that utilize the compressed latent space of the autoencoder.</p>
+                <a href="#" class="paper-link">Blog Link</a>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">Go</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Machine Learning</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">OpenCV</span>
+                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">SpaCy</span>
+                        <span class="skill-tag">NLTK</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Web Development</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express.js</span>
+                        <span class="skill-tag">TailwindCSS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Databases & DevOps</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">ChromaDB</span>
+                        <span class="skill-tag">Appwrite</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Azure</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            <div class="education-card">
+                <h3>Indian Institute Of Information Technology And Management Gwalior</h3>
+                <p><strong>BTech in Information Technology</strong> | 2022-2026</p>
+                <p>CGPA: 7.71</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Abhiram Reddy Yanampally. All rights reserved.</p>
+        <div class="contact-links">
+            <a href="mailto:abhiyanampally@gmail.com">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                abhiyanampally@gmail.com
+            </a>
+            <a href="https://scholar.google.com/citations?user=7eFb4pgAAAAJ&hl=en" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                Google Scholar
+            </a>
+            <a href="https://linkedin.com/in/AbhiRam162105" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                LinkedIn
+            </a>
+            <a href="https://github.com/abhiyanampally" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                GitHub
+            </a>
+        </div>
